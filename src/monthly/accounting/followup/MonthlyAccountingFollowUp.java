@@ -19,6 +19,11 @@ public class MonthlyAccountingFollowUp {
                 year = (Integer) JOptionPane.showInputDialog(null, "Qual o ano da Pesquisa?", "Escolha o ano", JOptionPane.QUESTION_MESSAGE, null, new Integer[]{nowYear,nowYear-1,nowYear-2}, 0);
 
                 System.out.println("Opção escolhida: " + year);
+                /**
+                 * Busca no banco:
+                 * -- Total de débito de cada mês 
+                 * Busca no banco de dados o saldo das contas no dia 31/12 do ano informado e do ano anterior
+                 */
             }else{
                 throw new Error("Empresa inválida!");
             }

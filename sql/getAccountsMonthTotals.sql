@@ -1,0 +1,14 @@
+SELECT    
+    EXTRACT(MONTH FROM L.BDDATA) AS MES, 
+    EXTRACT(YEAR FROM L.BDDATA) AS ANO,
+    L.BD:accountType, 
+    SUM(L.BDVALOR)
+FROM VSUC_EMPRESAS_TLAN L
+WHERE
+    L.BDCODEMP = :enterprise
+    AND L.BD:accountType IS NOT NULL
+    AND (EXTRACT(YEAR FROM L.BDDATA) = :year OR EXTRACT(YEAR FROM L.BDDATA) = :beforeYear)
+GROUP BY
+    1,
+    2,
+    L.BD:accountType

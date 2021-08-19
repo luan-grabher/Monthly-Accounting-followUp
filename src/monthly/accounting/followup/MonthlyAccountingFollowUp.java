@@ -1,6 +1,11 @@
 package monthly.accounting.followup;
 
+import Control.Controller;
+import Entity.Executavel;
+import Executor.Execution;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JOptionPane;
 
 public class MonthlyAccountingFollowUp {
@@ -35,7 +40,7 @@ public class MonthlyAccountingFollowUp {
 
     
     public static void main(String[] args) {
-        try {           
+        try {    
             
             //Pega Empresa
             enterprise = Integer.valueOf(JOptionPane.showInputDialog("Qual o NÚMERO/CÓDIGO da empresa no ÚNICO?").replaceAll("[^0-9]", "0"));
@@ -44,8 +49,18 @@ public class MonthlyAccountingFollowUp {
                 //Pega Ano
                 Integer nowYear = Calendar.getInstance().get(Calendar.YEAR);                
                 year = (Integer) JOptionPane.showInputDialog(null, "Qual o ano da Pesquisa?", "Escolha o ano", JOptionPane.QUESTION_MESSAGE, null, new Integer[]{nowYear,nowYear-1,nowYear-2}, 0);
-
-                System.out.println("Opção escolhida: " + year);
+                                                                
+                Controller c = new Controller(enterprise, year);
+                
+                Map<String, Executavel> runs = new HashMap<>();
+                runs.put("Conectando ao banco de dados", c.new connectDb());
+                runs.put("Buscando totais dos lctos mensais", c.new monthlyTotals());
+                
+                
+                Execution app =  new Execution("Template de Acompanhamento Contábil Mensal");
+                app.setExecutionMap(runs);
+                app.runExecutables();
+                app.endExecution();
                 /**
                  * Busca no banco:
                  * -- Total de débito de cada mês
@@ -80,6 +95,8 @@ public class MonthlyAccountingFollowUp {
         } catch (Error e){
             JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage(), "Ocorreu um ERRO", JOptionPane.ERROR_MESSAGE);
         }
-    }
+        
+        System.exit(0);
+    }    
     
 }

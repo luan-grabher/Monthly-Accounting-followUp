@@ -9,8 +9,8 @@ import sql.Database;
 
 public class Data {
 
-    private static String sqlMonthTotals = FileManager.getText(FileManager.getFile("sql/getAccountsMonthTotals.sql"));
-    private static Map<String, Map<Integer, Map<Integer, Map<Integer, BigDecimal>>>> totais = new HashMap<>();
+    private static final String sqlMonthTotals = FileManager.getText(FileManager.getFile("sql/getAccountsMonthTotals.sql"));
+    private static final Map<String, Map<Integer, Map<Integer, Map<Integer, BigDecimal>>>> totais = new HashMap<>();
 
     public static void defineTypeTotals(Integer enterprise, Integer year, String type) {
         totais.putIfAbsent(type, new HashMap<>());
@@ -23,7 +23,7 @@ public class Data {
 
         List<Map<String, Object>> results = Database.getDatabase().getMap(sqlMonthTotals, swaps);
 
-        for (Map<String, Object> result : results) {
+        results.forEach(result -> {
             Integer acc = Integer.valueOf(result.get("BD" + type).toString());
 
             //Se não tiver a conta, cria o mapa
@@ -43,7 +43,7 @@ public class Data {
                             Integer.valueOf(result.get("MES").toString()), //Pega mes
                             new BigDecimal(result.get("SUM").toString()) //Coloca total no mes
                     );
-        }
+        });       
     }
 
     /**
@@ -51,10 +51,44 @@ public class Data {
      */
     private static Map<Integer, BigDecimal> getMapMonths() {
         Map<Integer, BigDecimal> months = new HashMap<>();
-        for (int i = 1; i < 12; i++) {
+        for (int i = 1; i <= 12; i++) {
             months.put(i, BigDecimal.ZERO);
         }
 
         return months;
+    }
+    
+    /**
+     * Cria um mapa com as diferenças dos meses
+     */
+    public static void createMonthDiferences(){
+        Map<Integer, Map<Integer, Map<Integer, BigDecimal>>> debits = totais.get("DEBITO");
+        Map<Integer, Map<Integer, Map<Integer, BigDecimal>>> credits = totais.get("CREDITO");
+        
+        
+        totais.putIfAbsent("DIFFS", new HashMap<>());
+        Map<Integer, Map<Integer, Map<Integer, BigDecimal>>> diferences = totais.get("DIFFS");
+        
+        diferences.putAll(debits);
+        diferences.putAll(credits);
+        
+        
+        /*Percorre todas as contas*/
+        for (Map.Entry<Integer, Map<Integer, Map<Integer, BigDecimal>>> account : diferences.entrySet()) {
+            Map<Integer, Map<Integer, BigDecimal>> years = account.getValue();
+            
+            /*percorre todos anos da conta*/
+            for (Map.Entry<Integer, Map<Integer, BigDecimal>> year : years.entrySet()) {
+                Map<Integer, BigDecimal> months = year.getValue();
+                
+                /*Percorre todos meses do ano*/
+                for (Map.Entry<Integer, BigDecimal> month : months.entrySet()) {                    
+                    
+                    month.setValue(BigDecimal.TEN);
+                }
+            }
+        }
+        
+        System.out.println("");
     }
 }

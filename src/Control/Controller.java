@@ -32,4 +32,12 @@ public class Controller {
             Data.defineTypeTotals(enterprise, year,"CREDITO");
         }
     }
+    
+    public class monthlyDifferences extends Executavel {
+
+        @Override
+        public void run() {
+            Data.createMonthDiferences();
+        }
+    }
 }

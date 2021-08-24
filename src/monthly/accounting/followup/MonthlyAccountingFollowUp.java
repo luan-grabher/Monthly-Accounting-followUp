@@ -55,28 +55,15 @@ public class MonthlyAccountingFollowUp {
                 Map<String, Executavel> runs = new HashMap<>();
                 runs.put("Conectando ao banco de dados", c.new connectDb());
                 runs.put("Buscando totais dos lctos mensais", c.new monthlyTotals());
+                runs.put("Criando mapa de diferenças de credito-debito", c.new monthlyDifferences());
                 
                 
                 Execution app =  new Execution("Template de Acompanhamento Contábil Mensal");
                 app.setExecutionMap(runs);
                 app.runExecutables();
                 app.endExecution();
-                /**
-                 * Busca no banco:
-                 * -- Total de débito de cada mês
-                 * -- Total de credito de cada mês
-                 * 
-                 * Percorre todos totais de debito
-                 * -- Se não tiver a conta no mapa de contas
-                 * ---- Adiciona um mapa com os anos e meses para aquela conta
-                 * -- Adiciona no mapa da conta naquele ano e mes o valor
-                 * 
-                 * Percorre todos totais de credito
-                 * -- Se não tiver a conta no mapa de contas
-                 * ---- Adiciona um mapa com os anos e meses para aquela conta
-                 * -- Adiciona no mapa da conta naquele ano e mes o valor
-                 * -- Faz a diferença entre debito e credito
-                 * 
+                                
+                 /*
                  * Abre o arquivo Excel
                  * Troca a celula "ano" para o ano utilizado
                  * Percorre todos mapas de contas

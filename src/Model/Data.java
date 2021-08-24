@@ -10,7 +10,7 @@ import sql.Database;
 public class Data {
 
     private static final String sqlMonthTotals = FileManager.getText(FileManager.getFile("sql/getAccountsMonthTotals.sql"));
-    private static final Map<String, Map<Integer, Map<Integer, Map<Integer, BigDecimal>>>> totais = new HashMap<>();
+    public static final Map<String, Map<Integer, Map<Integer, Map<Integer, BigDecimal>>>> totais = new HashMap<>();
 
     public static void defineTypeTotals(Integer enterprise, Integer year, String type) {
         totais.putIfAbsent(type, new HashMap<>());
@@ -70,7 +70,7 @@ public class Data {
         Map<Integer, Map<Integer, Map<Integer, BigDecimal>>> diferences = totais.get("DIFFS");
         
         diferences.putAll(debits);
-        diferences.putAll(credits);
+        diferences.putAll(credits);               
         
         
         /*Percorre todas as contas*/
@@ -84,11 +84,14 @@ public class Data {
                 /*Percorre todos meses do ano*/
                 for (Map.Entry<Integer, BigDecimal> month : months.entrySet()) {                    
                     
-                    month.setValue(BigDecimal.TEN);
+                    BigDecimal debit = debits.getOrDefault(account.getKey(), new HashMap<>()).getOrDefault(year.getKey(), new HashMap<>()).getOrDefault(month.getKey(),BigDecimal.ZERO);
+                    BigDecimal credit = credits.getOrDefault(account.getKey(), new HashMap<>()).getOrDefault(year.getKey(), new HashMap<>()).getOrDefault(month.getKey(),BigDecimal.ZERO);                                       
+                    
+                    BigDecimal dif = credit.add(debit.negate());
+                    
+                    month.setValue(dif);
                 }
             }
-        }
-        
-        System.out.println("");
+        }        
     }
 }

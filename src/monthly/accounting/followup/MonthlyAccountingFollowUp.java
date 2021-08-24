@@ -12,33 +12,6 @@ public class MonthlyAccountingFollowUp {
     public static Integer year = 2021;
     public static Integer enterprise = 0;
     
-    /**
-     * MODELO DE MAPA DE CONTA
-     * "338" = {
-            "2020" = {
-
-            },
-            "2021" = {
-                    1 = {
-                            "debito" = 0,
-                            "credito" = 0,
-                            "diferenca" = 0
-                    },
-                    2 = {
-                            "debito" = 0,
-                            "credito" = 0,
-                            "diferenca" = 0
-                    },
-                    3 = {
-                            "debito" = 0,
-                            "credito" = 0,
-                            "diferenca" = 0
-                    }
-            }
-        }
-     */
-
-    
     public static void main(String[] args) {
         try {    
             

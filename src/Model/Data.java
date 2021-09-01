@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import sql.Database;
 
 public class Data {
@@ -66,7 +67,7 @@ public class Data {
         Map<Integer, Map<Integer, Map<Integer, BigDecimal>>> credits = totais.get("CREDITO");
         
         
-        totais.putIfAbsent("DIFFS", new HashMap<>());
+        totais.putIfAbsent("DIFFS", new TreeMap<>());
         Map<Integer, Map<Integer, Map<Integer, BigDecimal>>> diferences = totais.get("DIFFS");
         
         diferences.putAll(debits);

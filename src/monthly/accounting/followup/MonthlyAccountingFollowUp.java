@@ -4,7 +4,7 @@ import Control.Controller;
 import Entity.Executavel;
 import Executor.Execution;
 import java.util.Calendar;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
 
@@ -25,7 +25,7 @@ public class MonthlyAccountingFollowUp {
                                                                 
                 Controller c = new Controller(enterprise, year);
                 
-                Map<String, Executavel> runs = new HashMap<>();
+                Map<String, Executavel> runs = new LinkedHashMap<>();
                 runs.put("Conectando ao banco de dados", c.new connectDb());
                 runs.put("Buscando totais dos lctos mensais", c.new monthlyTotals());
                 runs.put("Criando mapa de diferenças de credito-debito", c.new monthlyDifferences());

@@ -2,6 +2,7 @@ package Control;
 
 import Entity.Executavel;
 import Model.Data;
+import Model.ExcelFile;
 import fileManager.FileManager;
 import sql.Database;
 
@@ -39,5 +40,14 @@ public class Controller {
         public void run() {
             Data.createMonthDiferences();
         }
+    }
+    
+    public class createExcelFile extends Executavel{
+
+        @Override
+        public void run() {
+            ExcelFile.createExcelFile();
+        }
+        
     }
 }

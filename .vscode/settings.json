@@ -1,0 +1,16 @@
+{
+    "java.completion.enabled": false,
+    "java.debug.settings.enableRunDebugCodeLens": false,
+    "java.test.editor.enableShortcuts": false,
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Administrador\\Documents\\NetBeansProjects\\Executor\\dist\\Executor.jar",
+        "c:\\Users\\Administrador\\Documents\\NetBeansProjects\\JExcel\\dist\\JExcel.jar",
+        "c:\\Users\\Administrador\\Documents\\NetBeansProjects\\JExcel\\libs/**/*.jar",
+        "c:\\Users\\Administrador\\Documents\\NetBeansProjects\\Sql\\dist\\SQL.jar",
+        "c:\\Users\\Administrador\\Documents\\NetBeansProjects\\SimpleView\\dist\\SimpleView.jar",
+        "c:\\Users\\Administrador\\Documents\\NetBeansProjects\\FileManager\\dist\\FileManager.jar",
+        "c:\\Users\\Administrador\\Documents\\NetBeansProjects\\Jar-Vendors\\JayBird.jar"
+    ],
+    "java.dependency.packagePresentation": "hierarchical"
+}

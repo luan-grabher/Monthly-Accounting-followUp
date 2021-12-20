@@ -3,6 +3,7 @@ package monthly.accounting.followup;
 import Control.Controller;
 import Entity.Executavel;
 import Executor.Execution;
+
 import java.util.Calendar;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -16,12 +17,12 @@ public class MonthlyAccountingFollowUp {
         try {    
             
             //Pega Empresa
-            //enterprise = Integer.valueOf(JOptionPane.showInputDialog("Qual o NÚMERO/CÓDIGO da empresa no ÚNICO?").replaceAll("[^0-9]", "0"));
+            enterprise = Integer.valueOf(JOptionPane.showInputDialog("Qual o NÚMERO/CÓDIGO da empresa no ÚNICO?").replaceAll("[^0-9]", "0"));
             
             if(enterprise > 0){            
                 //Pega Ano
                 Integer nowYear = Calendar.getInstance().get(Calendar.YEAR);                
-                //year = (Integer) JOptionPane.showInputDialog(null, "Qual o ano da Pesquisa?", "Escolha o ano", JOptionPane.QUESTION_MESSAGE, null, new Integer[]{nowYear,nowYear-1,nowYear-2}, 0);
+                year = (Integer) JOptionPane.showInputDialog(null, "Qual o ano da Pesquisa?", "Escolha o ano", JOptionPane.QUESTION_MESSAGE, null, new Integer[]{nowYear,nowYear-1,nowYear-2}, 0);
                                                                 
                 Controller c = new Controller(enterprise, year);
                 

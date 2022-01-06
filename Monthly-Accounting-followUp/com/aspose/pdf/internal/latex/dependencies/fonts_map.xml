@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!--
+1) Computer Modern Romans + Eufrak(\mathfrak)
+http://www.ctan.org/tex-archive/fonts/cm/ps-type1/bakoma/ttf
+2) Latin Modern Romans
+http://www.gust.org.pl/projects/e-foundry/latin-modern/download
+3) Computer Modern Typewriter + Computer Modern Sans Serif + Computer Modern math symbols
+http://cm-unicode.sourceforge.net/download.html
+-->
+<fonts>
+  <font>
+    <name>Arial</name>
+    <encoding>T1</encoding>
+    <family>uarial</family>
+  </font>
+  <font>
+    <name>Antiqua</name>
+    <encoding>OT1</encoding>
+    <family>uaq</family>
+  </font>
+  <font>
+    <name>Bookman</name>
+    <encoding>OT1</encoding>
+    <family>pbk</family>
+  </font>
+  <font>
+    <name>AvantGarde</name>
+    <encoding>OT1</encoding>
+    <family>pag</family>
+  </font>
+  <font>
+    <name>Times</name>
+    <encoding>T2A</encoding>
+    <family>txr</family>
+  </font>
+  <font>
+    <name>Palatino</name>
+    <encoding>OT1</encoding>
+    <family>pxr</family>
+  </font>
+  <font>
+    <name>Times New Roman</name>
+    <encoding>T1</encoding>
+    <family>ptm</family>
+  </font>
+  <font>
+    <name>Helvetica</name>
+    <encoding>OT1</encoding>
+    <family>phv</family>
+  </font>
+  <font>
+    <name>New Century Schoolbook</name>
+    <encoding>OT1</encoding>
+    <family>pnc</family>
+  </font>
+  <font>
+    <name>Courier New</name>
+    <encoding>OT1</encoding>
+    <family>pcr</family>
+  </font>
+  <!--##############################-->
+  <font>
+    <name>Computer Modern Fibonacci</name>
+    <encoding>OT1</encoding>
+    <family>cmfib</family>
+  </font>
+  <font>
+    <name>Computer Modern Roman</name>
+    <encoding>T1</encoding>
+    <family>cmr</family>
+  </font>
+  <font>
+    <name>Computer Modern Dunhill</name>
+    <encoding>OT1</encoding>
+    <family>cmdh</family>
+  </font>
+  <font>
+    <name>Computer Modern Roman Hebrew</name>
+    <encoding>LHE</encoding>
+    <family>cmr</family>
+  </font>
+  <font>
+    <name>Computer Modern math symbols</name>
+    <encoding>OMS</encoding>
+    <family>cmsy</family>
+  </font>
+  <font>
+    <name>Computer Modern Sans Serif</name>
+    <encoding>OT1</encoding>
+    <family>cmss</family>
+  </font>
+  <font>
+    <name>Computer Modern Typewriter</name>
+    <encoding>OT1</encoding>
+    <family>cmtt</family>
+  </font>
+  <!--##############################-->
+  <font>
+    <name>Latin Modern Roman</name>
+    <encoding>T1</encoding>
+    <family>lmr</family>
+  </font>
+  <!--##############################-->
+  <font>
+    <name>AMSb</name>
+    <encoding>U</encoding>
+    <family>msb</family>
+  </font>
+  <font>
+    <name>Eufrak</name>
+    <encoding>U</encoding>
+    <family>euf</family>
+  </font>
+</fonts>

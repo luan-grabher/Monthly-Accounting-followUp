@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="XMLSymbiontSchema"
+    targetNamespace="urn:symbiont"
+    elementFormDefault="qualified"
+    xmlns="urn:symbiont"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+
+  <xs:element name="symbiont" type="Symbiont"></xs:element>
+  
+  <xs:complexType name="Symbiont">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:choice>
+        <xs:element name="property" type="Property" ></xs:element>
+        <xs:element name="method" type="Method"></xs:element>
+      </xs:choice>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="optional"></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name ="Property">
+    <xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+    <xs:attribute name="type" type="Type" use="required"></xs:attribute>    
+    <xs:attribute name="readable" type="xs:boolean" use="optional"></xs:attribute>
+    <xs:attribute name="writable" type="xs:boolean" use="optional"></xs:attribute>
+  </xs:complexType>
+
+  <xs:simpleType name="Type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="int"/>
+      <xs:enumeration value="float"/>
+      <xs:enumeration value="string"/>
+      <xs:enumeration value="boolean"/>
+      <xs:enumeration value="datetime"/>
+      <xs:enumeration value="any"/> 
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="Method">
+    <xs:sequence  minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="argument" type="Argument"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+    <xs:attribute name="return" type="Type" use="optional"></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="Argument">
+    <xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+    <xs:attribute name="type" type="Type" use="required"></xs:attribute>
+  </xs:complexType>
+</xs:schema>

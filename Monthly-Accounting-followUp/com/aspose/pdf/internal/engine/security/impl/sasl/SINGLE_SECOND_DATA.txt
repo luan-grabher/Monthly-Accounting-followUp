@@ -1,0 +1,15 @@
+{
+
+                                                                new /*UInt16*/int[] { 0x627, 0x622 }, 
+                                                                new /*UInt16*/int[] { 0x627, 0x625 }, 
+                                                                new /*UInt16*/int[] { 0x9C7, 0x9CB }, 
+                                                                new /*UInt16*/int[] { 0x9C7, 0x9CC }, 
+                                                                new /*UInt16*/int[] { 0xB47, 0xB4B }, 
+                                                                new /*UInt16*/int[] { 0xB47, 0xB48 }, 
+                                                                new /*UInt16*/int[] { 0xB47, 0xB4C }, 
+                                                                new /*UInt16*/int[] { 0xCC6, 0xCCA }, 
+                                                                new /*UInt16*/int[] { 0xCC6, 0xCC8 }, 
+                                                                new /*UInt16*/int[] { 0xD46, 0xD4C }, 
+                                                                new /*UInt16*/int[] { 0xDD9, 0xDDC }, 
+                                                                new /*UInt16*/int[] { 0xDD9, 0xDDE }
+                                                           };

@@ -1,0 +1,35 @@
+-- .......................................................................... --
+-- File catalog  ............................................................ --
+
+--  XHTML+RDFa Catalog Data File
+
+    Revision:  $Revision: 1.2 $
+
+    See "Entity Management", SGML Open Technical Resolution 9401 for detailed
+    information on supplying and using catalog data. This document is available
+    from OASIS at URL:
+
+        <http://www.oasis-open.org/html/tr9401.html>
+--
+
+-- .......................................................................... --
+-- SGML declaration associated with XHTML  .................................. --
+
+OVERRIDE YES
+
+SGMLDECL "xml1.dcl"
+
+-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: --
+
+-- XHTML+RDFa modules          .............................................. --
+
+
+PUBLIC "-//W3C//DTD XHTML+RDFa 1.1//EN"       "xhtml-rdfa-2.dtd"
+
+
+PUBLIC "-//W3C//ENTITIES XHTML+RDFa Document Model 1.1//EN"      "xhtml-rdfa-model-2.mod"
+
+PUBLIC "-//W3C//ENTITIES XHTML MetaAttributes 1.1//EN"           "xhtml-metaAttributes-2.mod"
+
+-- End of catalog data  ..................................................... --
+-- .......................................................................... --

@@ -1,0 +1,33 @@
+		<<
+			/Version 1
+			/Shapes
+			<<
+				/WritingDirection 0
+				/Children [
+				<<
+					/ShapeType 0
+					/Procession 0
+					/Lines
+					<<
+						/WritingDirection 0
+						/Children [ ]
+					>>
+					/Cookie
+					<<
+						/Photoshop
+						<<
+							/ShapeType 0
+							/PointBase [ 0.0 0.0 ]
+							/Base
+							<<
+								/ShapeType 0
+								/TransformPoint0 [ 1.0 0.0 ]
+								/TransformPoint1 [ 0.0 1.0 ]
+								/TransformPoint2 [ 0.0 0.0 ]
+							>>
+						>>
+					>>
+				>>
+				]
+			>>
+		>>

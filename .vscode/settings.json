@@ -10,7 +10,19 @@
         "c:\\Users\\Administrador\\Documents\\NetBeansProjects\\Sql\\dist\\SQL.jar",
         "c:\\Users\\Administrador\\Documents\\NetBeansProjects\\SimpleView\\dist\\SimpleView.jar",
         "c:\\Users\\Administrador\\Documents\\NetBeansProjects\\FileManager\\dist\\FileManager.jar",
-        "c:\\Users\\Administrador\\Documents\\NetBeansProjects\\Jar-Vendors\\JayBird.jar"
+        "c:\\Users\\Administrador\\Documents\\NetBeansProjects\\Jar-Vendors\\JayBird.jar",
+        "c:\\Users\\Administrador\\Documents\\Projetos\\Moresco\\Executor\\dist\\Executor.jar",
+        "c:\\Users\\Administrador\\Documents\\Projetos\\Moresco\\FileManager\\dist\\FileManager.jar",
+        "c:\\Users\\Administrador\\Documents\\Projetos\\Moresco\\JExcel\\dist\\JExcel.jar",
+        "c:\\Users\\Administrador\\Documents\\Projetos\\Moresco\\JExcel\\libs/**/*.jar",
+        "c:\\Users\\Administrador\\Documents\\Projetos\\Moresco\\Dates\\dist\\Dates.jar",
+        "c:\\Users\\Administrador\\Documents\\Projetos\\Moresco\\Jar-Vendors\\ini4j-0.5.4-jdk14.jar",
+        "c:\\Users\\Administrador\\Documents\\Projetos\\Moresco\\Jar-Vendors\\JayBird.jar",
+        "c:\\Users\\Administrador\\Documents\\Projetos\\Moresco\\Sql\\dist\\SQL.jar"
     ],
-    "java.dependency.packagePresentation": "hierarchical"
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.outputPath": "output"
 }

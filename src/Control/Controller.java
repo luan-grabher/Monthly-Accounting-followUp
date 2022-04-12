@@ -1,5 +1,7 @@
 package Control;
 
+import java.io.IOException;
+
 import Entity.Executavel;
 import Model.Data;
 import Model.ExcelFile;
@@ -45,8 +47,12 @@ public class Controller {
     public class createExcelFile extends Executavel{
 
         @Override
-        public void run() {
-            ExcelFile.createExcelFile();
+        public void run() {            
+            try {
+                ExcelFile.createExcelFile();
+            } catch (IOException e) {
+                throw new Error("Occorreu um erro ao criar o arquivo excel: " + e.getMessage());
+            }
         }
         
     }
